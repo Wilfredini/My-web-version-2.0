@@ -1750,6 +1750,10 @@ i.fa-moon {
 }
 
 @media(max-width: 405px) {
+    .menu-btn {
+        right: -70px;
+    }
+
     .home .hello {
         margin-bottom: 40px;
     }

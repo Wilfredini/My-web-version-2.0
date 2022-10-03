@@ -1791,4 +1791,26 @@ i.fa-moon {
         font-size: 25px;
         margin-top: 10px;
     }
+
+    .about .about-content h2,
+    .about .about-content p {
+        text-align: center;
+    }
+
+    .about .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog .text-box .blog-text,
+    .blog .text-box .blog-heading {
+        text-align: center;
+    }
+
+    .contact .contact-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

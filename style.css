@@ -672,7 +672,7 @@ h1.profesion span {
     height: 60px;
     border-radius: 60px;
     text-decoration: none;
-    background-image: linear-gradient(to top, rgb(76, 7, 101), rgb(90, 21, 120), rgb(90, 21, 120));
+    background-image: linear-gradient(to right, rgb(113, 33, 143), rgb(143, 39, 188), rgb(123, 28, 164), rgb(85, 6, 120));
     color: var(--text-light-neonBlue);
     font-size: 20px;
     font-weight: 600;
@@ -690,6 +690,7 @@ h1.profesion span {
 .home .contact:active {
     color: var(--text-light-lightBlue);
     border: 1px solid var(--text-light-neonBlue);
+    border-radius: 60px;
     transition: 0.05s;
 }
 
@@ -932,6 +933,7 @@ i.fa-moon {
     font-weight: 200;
     line-height: 3;
     padding-right: 5px;
+    padding-bottom: 30px;
     position: relative;
 
 
@@ -1455,20 +1457,49 @@ i.fa-moon {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
-.contact .contact-form .form-item textarea.form-control {
-    height: 140px;
+.contact .contactbtn {
+    padding: 15px 20px;
+    width: 180px;
+    height: 60px;
+    border-radius: 60px;
+    text-decoration: none;
+    background-image: linear-gradient(to right, rgb(113, 33, 143), rgb(143, 39, 188), rgb(123, 28, 164), rgb(85, 6, 120));
+    color: var(--text-light-neonBlue);
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
-.contact .contact-form #btn {
-    height: 50px;
-    padding: 0 50px;
-    border-radius: 25px;
-    background-color: var(--neon-purple);
-    color: var(--text-light-neonBlue);
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    cursor: pointer;
+.contact .contact-form .form-group .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .contactbtn:hover {
+    box-shadow: 0 0 20px rgb(192, 14, 201), 0 0 30px rgb(89, 23, 146), 0 0 40px rgb(128, 50, 196);
+    text-shadow: 0 0 30px var(--text-light-neonBlue);
+    transition: 0.5s;
+}
+
+.contact .contactbtn:active {
+    color: var(--text-light-lightBlue);
+    border: 1px solid var(--text-light-neonBlue);
+    border-radius: 60px;
+    transition: 0.05s;
+}
+
+.contact .contact-form .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .contact-form .form-item textarea.form-control {
+    height: 140px;
+    width: 100%;
 }
 
 .contact .contact-form .name,
@@ -1564,7 +1595,11 @@ i.fa-moon {
     .contact .info-item {
         flex: 0 0 50%;
         max-width: 50%;
+    }
 
+    .about .personal-info .info-item p {
+        font-size: 20px;
+        font-weight: 500;
     }
 
     .contact-box {
@@ -1787,6 +1822,18 @@ i.fa-moon {
         max-width: 100%;
     }
 
+    .contact .info-item i {
+        font-size: 25px;
+    }
+
+    .contact .info-item h2 {
+        font-size: 25px;
+    }
+
+    .contact .info-item p {
+        font-size: 20px;
+    }
+
     .portfolio .portfolio-box .img-box .img-title {
         font-size: 16px;
     }
@@ -1820,5 +1867,29 @@ i.fa-moon {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .social-menu {
+        width: 100%;
+        background-color: var(--text-light);
+        border-radius: 0px 0px 0px 0px;
+        padding: 5px 0;
+    }
+
+    .social-menu:hover {
+        display: none;
+    }
+
+    .social-menu .social-item .social-icon.facebook {
+        color: #39569c;
+    }
+
+    .social-menu .social-item .social-icon.linkedin {
+        color: #0e76a8;
+    }
+
+    .social-menu .social-item .social-icon.github {
+        color: black;
+        transform: scale(1.2);
     }
 }

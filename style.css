@@ -1892,4 +1892,8 @@ i.fa-moon {
         color: black;
         transform: scale(1.2);
     }
+
+    .home .hello #text {
+        width: 355px;
+    }
 }

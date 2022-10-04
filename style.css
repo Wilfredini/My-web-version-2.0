@@ -872,34 +872,32 @@ i.fa-moon {
     width: 100%;
 }
 
-.about button.contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.about .contact {
     padding: 15px 20px;
     width: 180px;
     height: 60px;
     border-radius: 60px;
     text-decoration: none;
-    background-image: linear-gradient(to top, rgb(76, 7, 101), rgb(90, 21, 120), rgb(90, 21, 120));
+    background-image: linear-gradient(to right, rgb(113, 33, 143), rgb(143, 39, 188), rgb(123, 28, 164), rgb(85, 6, 120));
     color: var(--text-light-neonBlue);
     font-size: 20px;
     font-weight: 600;
-    margin-top: 40px;
+    margin-top: 60px;
     cursor: pointer;
     transition: 0.5s;
-    border: none;
 }
 
-.about button.contact:hover {
+.about .contact:hover {
     box-shadow: 0 0 20px rgb(192, 14, 201), 0 0 30px rgb(89, 23, 146), 0 0 40px rgb(128, 50, 196);
+    border-radius: 60px;
     text-shadow: 0 0 30px var(--text-light-neonBlue);
     transition: 0.5s;
 }
 
-.about button.contact:active {
+.about .contact:active {
     color: var(--text-light-lightBlue);
     border: 1px solid var(--text-light-neonBlue);
+    border-radius: 60px;
     transition: 0.05s;
 }
 

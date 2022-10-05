@@ -9,7 +9,7 @@ menuLink.forEach((element) => {
   element.addEventListener("click", function () {
     menuLink.forEach((item) => item.classList.remove("active"));
     setTimeout(function () {
-      if (menuOpen) {
+      if (menuOpen && window.innerWidth < 405) {
         menu.classList.remove("open");
       }
     }, 1000);
@@ -58,29 +58,11 @@ themeMenuBtn.addEventListener("click", () => {
 /*                              Smooth scrolling                              */
 /* -------------------------------------------------------------------------- */
 
-function smoothScroll(target, duration) {
-  var target = document.querySelector(target);
-  var targetPosition = target.getBoundingClientRect().top;
-  var startPosition = window.pageYOffset;
-  var distance = targetPosition - startPosition;
-  var startTime = null;
-
-  function animationScroll(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    var timeElapsed = currentTime - startTime;
-    var run = ease(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, run);
-    if (timeElapsed < duration) requestAnimationFrame(animationScroll);
-  }
-
-  function ease(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-  }
-
-  requestAnimationFrame(animationScroll);
-}
-
-smoothScroll(".about", 1000);
+document.querySelectorAll("a[href^='#']").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});

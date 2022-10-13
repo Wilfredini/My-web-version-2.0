@@ -4,19 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./skins.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link disabled class="alternate-style" rel="stylesheet" href="/css/neon.css" title="color-neon" />
+    <link  class="alternate-style" rel="stylesheet" href="/css/light.css" title="color-light">
+    <link disabled class="alternate-style" rel="stylesheet" href="/css/dark.css" title="color-dark">
     <script
       src="https://kit.fontawesome.com/679af4529b.js"
       crossorigin="anonymous"
     ></script>
+</script>
     <title>Prezentační Web</title>
   </head>
   <body>
+    <div class="cookie-box">
+      <p>Tento web používá k poskytování služeb a analýze návštěvnosti soubory cookie. Používáním tohoto webu stím souhlasíte</p>
+      <button class="cookie-btn">Okay</button>
+    </div>
     <!-- ==== Main container start ==== -->
     <main class="main-container">
       <!--===== Aside start =====-->
+     <a id="theme" href="#"><i class="fa-solid fa-gear"></i></a>
+
       <aside class="aside">
         <a href="#" class="nav-brand"
           ><span>C</span>harvát <br />
@@ -69,25 +76,17 @@
       </aside>
       <!--===== Aside end =====-->
       <div class="theme-menu">
-        <i id="theme" class="fa-solid fa-gear"></i>
-        <ul class="theme-changer">
-          <li>
-            <a href="#" class="neon"
-              >Neon space theme<i class="fa-solid fa-earth-europe"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" class="light"
-              >Light theme<i class="fa-sharp fa-solid fa-sun"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" class="dark"
-              >Dark theme <i class="fa-solid fa-moon"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
+            <a onclick="setActiveStyle('color-neon')" href="#" class="neon"
+              ><i class="fa-solid fa-earth-europe"></i
+            ><h5>Neon  space</h5></a>
+            <a onclick="setActiveStyle('color-light') "href="#" class="light"
+              ><i class="fa-sharp fa-solid fa-sun"></i
+                
+            ><h5>Ligth  mode</h5></a>
+            <a onclick="setActiveStyle('color-dark')" href="#" class="dark"
+              ><i class="fa-solid fa-moon"></i
+            ><h5>Dark  mode</h5></a>
+            </div>
       <div class="main-content">
       <!--===== Home section start =====-->
       <section id="home" class="home section">
@@ -106,7 +105,7 @@
           </div>
           <div class="row">
             <h1 class="hello">
-              Ahoj mé jméno je
+              Ahoj, mé jméno je
               <span id="animatedName"
                 ><svg
                   id="text"
@@ -243,6 +242,7 @@
                   />
                 </svg>
               </span>
+              <span class="my-name">Tomáš Charvát</span>
             </h1>
             <h1 class="profesion">
               Zajímám se o pozici <span>Junior Web developer</span>
@@ -284,7 +284,7 @@
             <span></span>
           </div>
           <div class="text-container">
-            <div data-aos="fade-up" class="row">
+            <div class="row">
               <div class="about-content">
             <h1 class="about-me">O mně</h1>
             <h2>Jmenuji se <span>Tomáš Charvát</span></h2>
@@ -321,8 +321,8 @@
             <p>Aktuální stav: <span>Zaměstnaný</span></p>
           </div>
           <div class="buttons">
-          <button class="contact">Stáhnout CV</button>
-          <button class="contact">Kontaktovat</button>
+          <a href="/CV.pdf"download><button class="contact">Stáhnout CV</button></a>
+         <a href="#contact"><button class="contact">Kontaktovat</button></a> 
         </div>
         </div>
           <div class="skills">
@@ -599,7 +599,7 @@
                 <div class="img-box-text slide-down">
                   <h2 class="img-title">Mé první webové stránky</h2>
                   <p class="img-content">Webové stránky portfolia verze 1.0</p>
-                  <a class="website" href="https://github.com/Wilfredini/My-web-version-1.0"><i class="fa-brands fa-github"></i></a>
+                  <a  href="https://github.com/Wilfredini/My-web-version-1.0"><i class="fa-brands fa-github"></i></a>
                 </div>
               </div>
               </div>
@@ -638,22 +638,24 @@
                 </div>
               </div>
               <h1 class="sub-title">Napište mi zprávu</h1>
-              <div class="contact-form">
+              <form action="https://formsubmit.co/charvi.tomas@seznam.cz" method="POST">
+                <div class="contact-form">
                 <div class="half-page">
                 <div class="form-item name">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Jméno">
+                  <input name="name" type="text" class="form-control" placeholder="Jméno" required>
                 </div>
+                <input type="hidden" name="_next" value="http://charvatwd.cz/thanks.html">
               </div>
               <div class="form-item email">
                 <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email">
+                  <input name="email" type="email" class="form-control" placeholder="Email" required>
                 </div>
               </div>
             </div>
               <div class="form-item">
                 <div class="form-group">
-                  <textarea class="form-control" name="text" id="text" rows="30" cols="30"
+                  <textarea id='message' class="form-control" name="message" id="text" rows="30" cols="30"
              placeholder="Zpráva"></textarea>
                 </div>
               </div>
@@ -663,8 +665,23 @@
                 </div>
               </div>
               </div>
+            </form>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="footer">
+        <div class="container-footer">
+          <div class="row">
+          <ul class="footer-menu">
+            <li class="footer-item"><a href="#home">Domů</a></li>
+            <li class="footer-item"><a href="#about">O mně</a></li>
+            <li class="footer-item"><a href="#blog">Blog</a></li>
+            <li class="footer-item"><a href="#portfolio">Portfolio</a></li>
+            <li class="footer-item"><a href="#contact">Kontakt</a></li>
+          </ul>
+          <div class="copyright">© Tomáš Charvát 2022</div>
+        </div>
         </div>
       </section>
     </div>
@@ -672,9 +689,5 @@
     <!-- ==== Main container end ====-->
     <!-- ==== JS files ====-->
     <script src="./script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
   </body>
 </html>
